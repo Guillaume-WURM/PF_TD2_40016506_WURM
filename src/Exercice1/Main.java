@@ -73,7 +73,7 @@ public class Main {
         /***** Question 2 : version lourde *****/
         List<String> l1 = new ArrayList<String>();
         l1.add("e1");
-        l1.add("e2");
+        l1.add("e3");
 
         Map<String,Integer> map1 = new HashMap<String,Integer>();
         map1.put("k1:",1);
