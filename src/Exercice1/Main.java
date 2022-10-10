@@ -17,18 +17,76 @@ public class Main {
 
         /******* Question 1 : version lambda *****/
         Somme<Integer> e1lambda = (x,y) -> x+y;
-        System.out.println("Integer version lambda : A + B ="+e1lambda.somme(a,b) + "\n");
+        System.out.println("/******* Début : Question 1 : version lambda *****/");
+        System.out.println("a= " + a + " b= " +b);
+        System.out.println("Integer version lambda : A + B ="+e1lambda.somme(a,b));
 
         Somme<Double> e2lambda = (x,y) -> x+y;
-        System.out.println("Double version lambda : C + D ="+e2lambda.somme(c,d) + "\n");
+        System.out.println("c= " + c + " d= " +d);
+        System.out.println("Double version lambda : C + D ="+e2lambda.somme(c,d));
 
         Somme<Long> e3lambda = (x,y) -> x+y;
-        System.out.println("Long version lambda : E + F ="+e3lambda.somme(e,f) + "\n");
+        System.out.println("e= " + e + " f= " +f);
+        System.out.println("Long version lambda : E + F ="+e3lambda.somme(e,f));
 
         Somme<String> e4lambda = (x,y) -> x+y;
-        System.out.println("String version lambda : G + H ="+e4lambda.somme(g,h) + "\n");
+        System.out.println("g= " + g + " h= " +h);
+        System.out.println("String version lambda : G + H ="+e4lambda.somme(g,h));
+        System.out.println("/******* Fin  : Question 1 : version lambda *****/" +"\n");
 
         /******* Question 2 : Lambda List & Map *****/
+        List<String> list = new ArrayList<String>();
+        Map<String, Integer> mp = new HashMap<String,Integer>();
+
+        for(int i=0; i<10; i++){
+            list.add("e"+i);
+            mp.put("k"+i, i);
+        }
+
+        ToString<List<String>> toStringl1 = i -> {
+            StringBuilder sb = new StringBuilder();
+            String virgule = "";
+            for (String s : list){
+                sb.append(virgule).append(s);
+                virgule = ",";
+            }
+            return sb.toString();
+        };
+
+        ToString<Map<String,Integer>> toStringMap = i -> {
+            StringBuilder sb = new StringBuilder();
+            String virgule = "";
+            for (Map.Entry<String, Integer> entry : mp.entrySet()){
+                sb.append(virgule).append(entry.getKey() + ":").append("v").append(entry.getValue());
+                virgule = ",";
+            }
+            return sb.toString();
+        };
+
+        /***** Sout List & Map ******/
+
+        System.out.println("/******* Début  : Question 2 : version lambda *****/" );
+        System.out.println("List : " + toStringl1.toString(list));
+        System.out.println("Map : " +toStringMap.toString(mp));
+        System.out.println("/******* Fin  : Question 2 : version lambda *****/" +"\n");
+
+        /***** Question 3 *****/
+        /*
+         * Function : une fonction qui prend en paramètre un objet de type T et qui retourne un objet de type R.
+         *                => Convertie (map) un type vers un autre. Lambda avec une variable
+         *
+         * Predicate : Test l'argument d'entrée selon un critère et renvoie true ou false.
+         *
+         * Consummer : La fonction a un argument en entrée de type T et n'a pas de retour.
+         *                => consumme une entrée et ne retourne rien
+         *
+         * Supplier : Ne possède pas d'argument en entrée et retourne un objet de type T.
+         */
+
+
+
+
+
 
         /******* Question 1 : version lourde *****/
         Somme<Integer> e1 = new Somme<Integer>() {
@@ -62,18 +120,10 @@ public class Main {
             }
         };
 
-        /*** Sout ***/
-        System.out.println("Integer version lourde : A+B = "+e1.somme(a,b));
-        System.out.println("Double version lourde : C+D = " +e2.somme(c,d));
-        System.out.println("Longue version lourde : E+F = " +e3.somme(e,f));
-        System.out.println("Longue version lourde : G+H = " +e4.somme(g,h));
-
-
-
         /***** Question 2 : version lourde *****/
         List<String> l1 = new ArrayList<String>();
         l1.add("e1");
-        l1.add("e3");
+        l1.add("e2");
 
         Map<String,Integer> map1 = new HashMap<String,Integer>();
         map1.put("k1:",1);
@@ -111,20 +161,17 @@ public class Main {
                 return sb.toString();
             }
         };
+        /***** Sout 2eme version ******/
+        System.out.println("/******* Début : Question 1 : version lourde *****/");
+        System.out.println("Integer version lourde : A+B = "+e1.somme(a,b));
+        System.out.println("Double version lourde : C+D = " +e2.somme(c,d));
+        System.out.println("Longue version lourde : E+F = " +e3.somme(e,f));
+        System.out.println("Longue version lourde : G+H = " +e4.somme(g,h) );
+        System.out.println("/******* Fin : Question 1 : version lambda *****/" +"\n");
+
+        System.out.println("/******* Début  : Question 2 : version lourde *****/" );
         System.out.println(listString.toString(l1));
         System.out.println(mapStringInteger.toString(map1));
-
-        /***** Question 3 *****/
-        /*
-        * Function : une fonction qui prend en paramètre un objet de type T et qui retourne un objet de type R.
-        *                => Convertie (map) un type vers un autre. Lambda avec une variable
-        *
-        * Predicate : Test l'argument d'entrée selon un critère et renvoie true ou false.
-        *
-        * Consummer : La fonction a un argument en entrée de type T et n'a pas de retour.
-        *                => consumme une entrée et ne retourne rien
-        *
-        * Supplier : Ne possède pas d'argument en entrée et retourne un objet de type T.
-         */
+        System.out.println("/******* Fin  : Question 2 : version lourde *****/" +"\n");
     }
 }
