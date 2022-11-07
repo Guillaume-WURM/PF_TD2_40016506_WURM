@@ -27,47 +27,41 @@ public class Main {
         e3.noter(m2, 5.0);
         e3.noter(m3, 14.0);
 
-        /* Exercice 3 Question 1*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 1 :");
-        afficheSi(a1, "**TOUS LES ETUDIANTS\n", etudiant -> etudiant.notes().containsKey(m3));
+        System.out.println("************ Début : Exercice 3 : Question 1 : V1 ************\n");
+        afficheSi("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3),a1);
+        System.out.println("************ Fin : Exercice 3 : Question 1 : V1 ************ \n");
 
-        /* Exercice 3 Question 2*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 2 :");
-        afficheSi(a1,"Etudiant défaillant", aDEF);
 
-        /* Exercice 3 Question 3*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 3 :");
-        afficheSi(a1,"**ETUDIANTS AVEC NOTE ELIMINATOIRE\n", aNoteEliminatoire);
+        System.out.println("************ Début : Exercice 3 : Question 1 : V2 ************");
+        afficheSi2("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3),a1);
+        System.out.println("************ Fin : Exercice 3 : Question 1 : V2 ************ \n");
 
-        /* Exercice 3 Question 4*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 4 :");
-        afficherMoyenne(a1, aDEF);
+        System.out.println("************ Début : Exercice 3 : Question 2 : aDEF ************\n");
+        afficheSi2("**Etudiant défaillant", aDEF,a1);
+        System.out.println("************ Fin : Exercice 3 : Question 2 : aDEF ************\n");
 
-        /* Exercice 3 Question 5*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 5 :");
-        // afficheSi(a1,"**ETUDIANTS SOUS LA MOYENNE\n", naPasLaMoyennev1);
-        System.out.println("Erreur affiché à cause de DEF : Erreur Finished with non-zero exit value");
+        System.out.println("************ Début : Exercice 3 : Question 3 : aNoteEliminatoire ************\n");
+        afficheSi2("**ETUDIANTS AVEC NOTE ELIMINATOIRE", aNoteEliminatoire,a1);
+        System.out.println("************ Fin : Exercice 3 : Question 3 : aNoteEliminatoire ************\n");
 
-        /* Exercice 3 Question 6*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 6 :");
-        afficheSi(a1,"**ETUDIANTS SOUS LA MOYENNE", naPasLaMoyennev2);
+        System.out.println("************ Début : Exercice 3 : Question 4 : moyenne ************\n");
+        afficheMoyenne(aDEF,a1);
+        System.out.println("************ Fin : Exercice 3 : Question 4 : moyenne ************\n");
 
-        /* Exercice 3 Question 7*/
-        System.out.println("-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 7 :");
-        // afficheSi(a1,"**ETUDIANTS EN SESSION 2 (v2)", session2v1);
-        afficheSi2(a1,"**ETUDIANTS EN SESSION 2 (v2)", session2v1);
+        /*System.out.println("************ Début : Exercice 3 : Question 5 : naPasLaMoyennev1 ************\n");
+        afficheSi2("**ETUDIANTS SOUS LA MOYENNE v1",naPasLaMoyennev1,a1);
+        System.out.println("************ Fin : Exercice 3 : Question 5 : naPasLaMoyennev1 ************\n");*/
 
-        /*Exercice 3 Question 8*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 8 :");
-        afficheSiv2(a1,"**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3),new Function<Etudiant, String>() {
+        System.out.println("************ Début : Exercice 3 : Question 6 : naPasLaMoyennev2 ************\n");
+        afficheSi2("**ETUDIANTS SOUS LA MOYENNE v1",naPasLaMoyennev2,a1);
+        System.out.println("************ Fin : Exercice 3 : Question 6 : naPasLaMoyennev2 ************\n");
+
+        System.out.println("************ Début : Exercice 3 : Question 7 : session2v1 ************\n");
+        afficheSi2("**ETUDIANTS SOUS LA MOYENNE v1",session2v1,a1);
+        System.out.println("************ Fin : Exercice 3 : Question 7 : session2v1 ************\n");
+
+        System.out.println("************ Début : Exercice 3 : Question 8 ************\n");
+        afficheSiV2("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3), a1, new Function<Etudiant, String>() {
             @Override
             public String apply(Etudiant etudiant) {
                 if (moyenne(etudiant) == null) {
@@ -77,65 +71,54 @@ public class Main {
                 }
             }
         });
+        System.out.println("************ Fin : Exercice 3 : Question 8  ************\n");
 
-        /*Exercice 3 Question 9*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 9 :");
-        afficheSiv2(a1,"**TOUS LES ETUDIANTS AVEC MOYENNE INDICATIVE", etudiant -> etudiant.notes().containsKey(m3), new Function<Etudiant, String>() {
+        System.out.println("************ Début : Exercice 3 : Question 9 : moyenneIndicative ************\n");
+        afficheSiV2("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3), a1, new Function<Etudiant, String>() {
             @Override
             public String apply(Etudiant etudiant) {
                 return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
             }
         });
+        System.out.println("************ Fin : Exercice 3 : Question 9 : moyenneIndicative ************\n");
 
-        /*Exercice 3 Question 10*/
-        System.out.println("\n-------------------------------");
-        System.out.println("Exercice 3 \nQuestion 10 :");
-        afficheSiv2(a1,"**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), new Function<Etudiant, String>() {
+        System.out.println("************ Début : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise ************\n");
+        afficheSiV2("**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), a1, new Function<Etudiant, String>() {
             @Override
             public String apply(Etudiant etudiant) {
                 return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
             }
         });
-
-        e2.noter(m1, 20.0);
-        e2.noter(m3, 20.0);
-
-        System.out.println("\nExercice 3 \nQuestion 10 (Apres changement des notes 14 en 20) :");
-        afficheSiv2(a1,"**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), new Function<Etudiant, String>() {
-            @Override
-            public String apply(Etudiant etudiant) {
-                return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
-            }
-        });
+        System.out.println("************ Fin : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise ************\n");
 
     }
 
-    /* Exercice 3 Question 1*/
-    private static void afficheSi(Annee annee, String titre, Predicate<Etudiant> predicate) {
-        System.out.println(titre);
-        for (Etudiant etudiant : annee.etudiants()) {
-            if (predicate.test(etudiant)) {
-                System.out.println(etudiant);
+    /* Question 1 : AfficheSi version 1*/
+    private static void afficheSi(String enTete, Predicate<Etudiant> e1, Annee anne){
+        System.out.println(enTete);
+        for(Etudiant e : anne.etudiants()){
+            if(e1.test(e)){
+                System.out.println(e);
             }
         }
     }
 
-    private static void afficheSi2(Annee annee,String titre, Predicate<Etudiant> predicate) {
-        System.out.println(titre);
-        annee.etudiants().forEach(etudiant -> {
-            if (predicate.test(etudiant)){
-                System.out.println(etudiant);
+    /* Question 1 : AfficheSi version 2*/
+    private static void afficheSi2(String enTete, Predicate<Etudiant> e1, Annee anne){
+        System.out.println(enTete);
+        anne.etudiants().forEach(e -> {
+            if(e1.test(e)){
+                System.out.println(e);
             }
         });
     }
 
-    /* Exercice 3 Question 2*/
-    private static Boolean estDefaillant(Etudiant etudiant) {
-        for (UE ue : etudiant.annee().ues()) {
-            Set<Matiere> listeDeMatieres = ue.ects().keySet();
-            for (Matiere matiere : listeDeMatieres) {
-                if (!etudiant.notes().containsKey(matiere)) {
+    /* Question 2 : aDEF*/
+    private static Boolean defaillant(Etudiant e){
+        for (UE ue : e.annee().ues()){
+            Set<Matiere> matieres = ue.ects().keySet();
+            for (Matiere matiere : matieres){
+                if(!e.notes().containsKey(matiere)){
                     return true;
                 }
             }
@@ -143,30 +126,102 @@ public class Main {
         return false;
     }
 
-    private static final Predicate<Etudiant> aDEF = etudiant -> (estDefaillant(etudiant));
+    private static final Predicate<Etudiant> aDEF = e -> defaillant(e);
 
-    /* Exercice 3 Question 3*/
-    private static final Predicate<Etudiant> aNoteEliminatoire = etudiant -> {
-        Collection<Double> list = etudiant.notes().values();
-        for (Double l : list)
-            if (l < 6) {
+    /*Question 3 : aNoteEliminatoire*/
+    private static final Predicate<Etudiant> aNoteEliminatoire = e -> {
+        Collection<Double> list = e.notes().values();
+        for (Double l1 : list)
+            if (l1 < 6) {
                 return true;
             }
         return false;
     };
 
-    /* Exercice 3 Question 4*/
-    private static double sommeCoef(Etudiant etudiant) {
-        double sommeCoef = 0;
+    /*Question 4 : moyenne*/
+
+    private static Double moyenne(Etudiant etudiant) {
+        double somme = 0.0;
+        double sommeCoefficient = 0.0;
+        if (defaillant(etudiant)){
+            return null;
+        }
+
+        for (UE ue : etudiant.annee().ues()) {
+            for (Integer i : ue.ects().values()) {
+                sommeCoefficient += i;
+            }
+        }
+
+        for (Map.Entry<Matiere, Double> entry : etudiant.notes().entrySet()) {
+            Integer coefficient = coefficientMatiere(etudiant, entry.getKey());
+            somme += entry.getValue() * coefficient;
+        }
+        return somme / sommeCoefficient;
+    }
+
+
+    private  static void afficheMoyenne(Predicate<Etudiant> aDEF, Annee annee){
+        System.out.println("**MOYENNE DES ETUDIANTS");
+        for(Etudiant e : annee.etudiants()){
+            if(!aDEF.test(e)){
+                System.out.println(e.nom() + " a " + moyenne(e) + " de moyenne");
+            }
+            else{
+                System.out.println(e.nom() + " a une moyenne null");
+            }
+        }
+    }
+
+    /*Question 5 : naPasLaMoyennev1 */
+    private static final Predicate<Etudiant> naPasLaMoyennev1 = etudiant -> moyenne(etudiant) < 10;
+
+    /*Question 6 : naPasLaMoyennev2 */
+    private static final Predicate<Etudiant> naPasLaMoyennev2 = aDEF.or(naPasLaMoyennev1);
+
+    /*Question 7 : session2v1 */
+    private static final Predicate<Etudiant> session2v1 = aDEF.or(naPasLaMoyennev1).or(aNoteEliminatoire);
+
+    /*Question 8 : afficheSiv2 */
+    private static void afficheSiV2(String enTete, Predicate<Etudiant> e, Annee annee, Function<Etudiant, String> r) {
+        System.out.println(enTete);
+        annee.etudiants().forEach(e1 -> {
+            if (e.test(e1)) {
+                System.out.println(r.apply(e1));
+            }
+        });
+    }
+
+    /*Question 9 : moyenneIndicative */
+    public static Double moyenneIndicative(Etudiant etudiant) {
+        double somme = 0.0;
+        double sommeCoef = 0.0;
         for (UE ue : etudiant.annee().ues()) {
             for (Integer i : ue.ects().values()) {
                 sommeCoef += i;
             }
         }
-        return sommeCoef;
+
+        for (Map.Entry<Matiere, Double> entry : etudiant.notes().entrySet()) {
+            Integer coef = coefficientMatiere(etudiant, entry.getKey());
+            if (entry.getValue() < 10) {
+                somme += 10 * coef;
+            } else {
+                somme += entry.getValue() * coef;
+            }
+        }
+        return somme / sommeCoef;
     }
 
-    private static Integer coefMatiere(Etudiant etudiant, Matiere mat) {
+
+    /*Question 10 : naPasLaMoyenneGeneralisee */
+    private static Predicate<Etudiant> naPasLaMoyenneGeneralisee(Function<Etudiant, Double> moyenne) {
+        return etudiant -> moyenne.apply(etudiant) < 10;
+    }
+
+
+    /*other functions*/
+    private static Integer coefficientMatiere(Etudiant etudiant, Matiere mat) {
         for (UE ue : etudiant.annee().ues()) {
             for (Map.Entry<Matiere, Integer> couple : ue.ects().entrySet()) {
                 if (couple.getKey().equals(mat)) {
@@ -175,60 +230,5 @@ public class Main {
             }
         }
         return null;
-    }
-
-    private static Double matiereNotesCoef(Etudiant etudiant) {
-        double somme = 0.0;
-
-        for (Map.Entry<Matiere, Double> entry : etudiant.notes().entrySet()) {
-            Integer coef = coefMatiere(etudiant, entry.getKey());
-            somme += entry.getValue() * coef;
-        }
-        return somme;
-    }
-
-    private static Double moyenne(Etudiant etudiant) {
-        if (estDefaillant(etudiant)) return null;
-        Double n = matiereNotesCoef(etudiant);
-        return n / sommeCoef(etudiant);
-    }
-
-    private static void afficherMoyenne(Annee annee, Predicate<Etudiant> aDef) {
-        System.out.println("**MOYENNE DES ETUDIANTS");
-        for (Etudiant etudiant : annee.etudiants()) {
-            if (aDef.test(etudiant)) System.out.println(etudiant.nom() + " a une moyenne null");
-            else System.out.println(etudiant.nom() + " a " + moyenne(etudiant) + " de moyenne");
-        }
-    }
-
-    /* Exercice 3 Question 5*/
-    private static final Predicate<Etudiant> naPasLaMoyennev1 = etudiant -> moyenne(etudiant) < 10;
-
-    /* Exercice 3 Question 6*/
-    private static final Predicate<Etudiant> naPasLaMoyennev2 = aDEF.or(naPasLaMoyennev1);
-
-    /* Exercice 3 Question 7*/
-    private static final Predicate<Etudiant> session2v1 = aDEF.or(naPasLaMoyennev1).or(aNoteEliminatoire);
-
-    /* Exercice 3 Question 8*/
-    private static void afficheSiv2(Annee annee, String titre, Predicate<Etudiant> predicate, Function<Etudiant, String> representation) {
-        System.out.println(titre);
-        annee.etudiants().forEach(etudiant -> {
-            if (predicate.test(etudiant)) {
-                String s = representation.apply(etudiant);
-                System.out.println(s);
-            }
-        });
-    }
-
-    /* Exercice 3 Question 9*/
-    public static Double moyenneIndicative(Etudiant etudiant) {
-        Double n = matiereNotesCoef(etudiant);
-        return n / sommeCoef(etudiant);
-    }
-
-    /* Exercice 3 Question 10*/
-    private static Predicate<Etudiant> naPasLaMoyenneGeneralisee(Function<Etudiant, Double> moyenne) {
-        return etudiant -> moyenne.apply(etudiant) < 10;
     }
 }

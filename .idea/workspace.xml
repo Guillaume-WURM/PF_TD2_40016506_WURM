@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b51ccf87-cc68-4869-9e70-251c757a774b" name="Changes" comment="td2 : exercice 3 question 1 à 4">
+    <list default="true" id="b51ccf87-cc68-4869-9e70-251c757a774b" name="Changes" comment="td2 : exercice 3 question 5 à 10 in static void main class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exercice3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice3/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +102,9 @@
       <workItem from="1665438138552" duration="3693000" />
       <workItem from="1665489038715" duration="6234000" />
       <workItem from="1665518406695" duration="5251000" />
-      <workItem from="1667811569408" duration="996000" />
+      <workItem from="1667811569408" duration="2143000" />
+      <workItem from="1667816127880" duration="128000" />
+      <workItem from="1667823594501" duration="10552000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1665439054212</created>
@@ -152,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667812465380</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="td2 : exercice 3 question 5 à 10 not static void main class">
+      <created>1667812741089</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667812741089</updated>
+    </task>
+    <task id="LOCAL-00009" summary="td2 : exercice 3 question 5 à 10 in static void main class">
+      <created>1667812851817</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667812851817</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +194,8 @@
     <MESSAGE value=" API OF TEACHER" />
     <MESSAGE value="start main exo 3" />
     <MESSAGE value="td2 : exercice 3 question 1 à 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="td2 : exercice 3 question 1 à 4" />
+    <MESSAGE value="td2 : exercice 3 question 5 à 10 not static void main class" />
+    <MESSAGE value="td2 : exercice 3 question 5 à 10 in static void main class" />
+    <option name="LAST_COMMIT_MESSAGE" value="td2 : exercice 3 question 5 à 10 in static void main class" />
   </component>
 </project>
