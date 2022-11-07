@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b51ccf87-cc68-4869-9e70-251c757a774b" name="Changes" comment="td2 : exercice 3 question 5 à 10 in static void main class">
+    <list default="true" id="b51ccf87-cc68-4869-9e70-251c757a774b" name="Changes" comment="td2 : exercice 3 question 1 à 10 refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exercice3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercice3/Main.java" afterDir="false" />
     </list>
@@ -104,7 +104,7 @@
       <workItem from="1665518406695" duration="5251000" />
       <workItem from="1667811569408" duration="2143000" />
       <workItem from="1667816127880" duration="128000" />
-      <workItem from="1667823594501" duration="10552000" />
+      <workItem from="1667823594501" duration="11197000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1665439054212</created>
@@ -169,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667812851817</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="td2 : exercice 3 question 1 à 10 refactor">
+      <created>1667835111904</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667835111904</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +203,7 @@
     <MESSAGE value="td2 : exercice 3 question 1 à 4" />
     <MESSAGE value="td2 : exercice 3 question 5 à 10 not static void main class" />
     <MESSAGE value="td2 : exercice 3 question 5 à 10 in static void main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="td2 : exercice 3 question 5 à 10 in static void main class" />
+    <MESSAGE value="td2 : exercice 3 question 1 à 10 refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="td2 : exercice 3 question 1 à 10 refactor" />
   </component>
 </project>

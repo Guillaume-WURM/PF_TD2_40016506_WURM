@@ -27,7 +27,7 @@ public class Main {
         e3.noter(m2, 5.0);
         e3.noter(m3, 14.0);
 
-        System.out.println("************ Début : Exercice 3 : Question 1 : V1 ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 1 : V1 ************");
         afficheSi("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3),a1);
         System.out.println("************ Fin : Exercice 3 : Question 1 : V1 ************ \n");
 
@@ -36,15 +36,15 @@ public class Main {
         afficheSi2("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3),a1);
         System.out.println("************ Fin : Exercice 3 : Question 1 : V2 ************ \n");
 
-        System.out.println("************ Début : Exercice 3 : Question 2 : aDEF ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 2 : aDEF ************");
         afficheSi2("**Etudiant défaillant", aDEF,a1);
         System.out.println("************ Fin : Exercice 3 : Question 2 : aDEF ************\n");
 
-        System.out.println("************ Début : Exercice 3 : Question 3 : aNoteEliminatoire ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 3 : aNoteEliminatoire ************");
         afficheSi2("**ETUDIANTS AVEC NOTE ELIMINATOIRE", aNoteEliminatoire,a1);
         System.out.println("************ Fin : Exercice 3 : Question 3 : aNoteEliminatoire ************\n");
 
-        System.out.println("************ Début : Exercice 3 : Question 4 : moyenne ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 4 : moyenne ************");
         afficheMoyenne(aDEF,a1);
         System.out.println("************ Fin : Exercice 3 : Question 4 : moyenne ************\n");
 
@@ -52,15 +52,15 @@ public class Main {
         afficheSi2("**ETUDIANTS SOUS LA MOYENNE v1",naPasLaMoyennev1,a1);
         System.out.println("************ Fin : Exercice 3 : Question 5 : naPasLaMoyennev1 ************\n");*/
 
-        System.out.println("************ Début : Exercice 3 : Question 6 : naPasLaMoyennev2 ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 6 : naPasLaMoyennev2 ************");
         afficheSi2("**ETUDIANTS SOUS LA MOYENNE v1",naPasLaMoyennev2,a1);
         System.out.println("************ Fin : Exercice 3 : Question 6 : naPasLaMoyennev2 ************\n");
 
-        System.out.println("************ Début : Exercice 3 : Question 7 : session2v1 ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 7 : session2v1 ************");
         afficheSi2("**ETUDIANTS SOUS LA MOYENNE v1",session2v1,a1);
         System.out.println("************ Fin : Exercice 3 : Question 7 : session2v1 ************\n");
 
-        System.out.println("************ Début : Exercice 3 : Question 8 ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 8 ************");
         afficheSiV2("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3), a1, new Function<Etudiant, String>() {
             @Override
             public String apply(Etudiant etudiant) {
@@ -73,7 +73,7 @@ public class Main {
         });
         System.out.println("************ Fin : Exercice 3 : Question 8  ************\n");
 
-        System.out.println("************ Début : Exercice 3 : Question 9 : moyenneIndicative ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 9 : moyenneIndicative ************");
         afficheSiV2("**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3), a1, new Function<Etudiant, String>() {
             @Override
             public String apply(Etudiant etudiant) {
@@ -82,7 +82,7 @@ public class Main {
         });
         System.out.println("************ Fin : Exercice 3 : Question 9 : moyenneIndicative ************\n");
 
-        System.out.println("************ Début : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise ************\n");
+        System.out.println("************ Début : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise ************");
         afficheSiV2("**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), a1, new Function<Etudiant, String>() {
             @Override
             public String apply(Etudiant etudiant) {
@@ -90,6 +90,20 @@ public class Main {
             }
         });
         System.out.println("************ Fin : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise ************\n");
+
+
+        System.out.println("************ Début : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise en remplaçant les deux 14/20 de Bob par des 20/20 ************");
+        e2.noter(m1,20.0);
+        e2.noter(m3,20.0);
+        afficheSiV2("**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), a1, new Function<Etudiant, String>() {
+            @Override
+            public String apply(Etudiant etudiant) {
+                return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
+            }
+        });
+        System.out.println("************ Fin : Exercice 3 : Question 10 : naPasLaMoyenneGeneralise en remplaçant les deux 14/20 de Bob par des 20/20 ************\n");
+
+
 
     }
 
