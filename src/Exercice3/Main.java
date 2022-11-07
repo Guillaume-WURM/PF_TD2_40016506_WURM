@@ -47,6 +47,67 @@ public class Main {
         System.out.println("Exercice 3 \nQuestion 4 :");
         afficherMoyenne(a1, aDEF);
 
+        /* Exercice 3 Question 5*/
+        System.out.println("\n-------------------------------");
+        System.out.println("Exercice 3 \nQuestion 5 :");
+        // afficheSi(a1,"**ETUDIANTS SOUS LA MOYENNE\n", naPasLaMoyennev1);
+        System.out.println("Erreur affiché à cause de DEF : Erreur Finished with non-zero exit value");
+
+        /* Exercice 3 Question 6*/
+        System.out.println("\n-------------------------------");
+        System.out.println("Exercice 3 \nQuestion 6 :");
+        afficheSi(a1,"**ETUDIANTS SOUS LA MOYENNE", naPasLaMoyennev2);
+
+        /* Exercice 3 Question 7*/
+        System.out.println("-------------------------------");
+        System.out.println("Exercice 3 \nQuestion 7 :");
+        // afficheSi(a1,"**ETUDIANTS EN SESSION 2 (v2)", session2v1);
+        afficheSi2(a1,"**ETUDIANTS EN SESSION 2 (v2)", session2v1);
+
+        /*Exercice 3 Question 8*/
+        System.out.println("\n-------------------------------");
+        System.out.println("Exercice 3 \nQuestion 8 :");
+        afficheSiv2(a1,"**TOUS LES ETUDIANTS", etudiant -> etudiant.notes().containsKey(m3),new Function<Etudiant, String>() {
+            @Override
+            public String apply(Etudiant etudiant) {
+                if (moyenne(etudiant) == null) {
+                    return etudiant.prenom() + " " + etudiant.nom() + " : " + "défaillant";
+                } else {
+                    return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenne(etudiant);
+                }
+            }
+        });
+
+        /*Exercice 3 Question 9*/
+        System.out.println("\n-------------------------------");
+        System.out.println("Exercice 3 \nQuestion 9 :");
+        afficheSiv2(a1,"**TOUS LES ETUDIANTS AVEC MOYENNE INDICATIVE", etudiant -> etudiant.notes().containsKey(m3), new Function<Etudiant, String>() {
+            @Override
+            public String apply(Etudiant etudiant) {
+                return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
+            }
+        });
+
+        /*Exercice 3 Question 10*/
+        System.out.println("\n-------------------------------");
+        System.out.println("Exercice 3 \nQuestion 10 :");
+        afficheSiv2(a1,"**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), new Function<Etudiant, String>() {
+            @Override
+            public String apply(Etudiant etudiant) {
+                return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
+            }
+        });
+
+        e2.noter(m1, 20.0);
+        e2.noter(m3, 20.0);
+
+        System.out.println("\nExercice 3 \nQuestion 10 (Apres changement des notes 14 en 20) :");
+        afficheSiv2(a1,"**TOUS LES ETUDIANTS SOUS LA MOYENNE INDICATIVE", naPasLaMoyenneGeneralisee(Main::moyenneIndicative), new Function<Etudiant, String>() {
+            @Override
+            public String apply(Etudiant etudiant) {
+                return etudiant.prenom() + " " + etudiant.nom() + " : " + moyenneIndicative(etudiant);
+            }
+        });
 
     }
 
