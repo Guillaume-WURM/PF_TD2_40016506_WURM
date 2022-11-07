@@ -3,6 +3,7 @@ package Exercice3;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Main {
@@ -45,6 +46,8 @@ public class Main {
         System.out.println("\n-------------------------------");
         System.out.println("Exercice 3 \nQuestion 4 :");
         afficherMoyenne(a1, aDEF);
+
+
     }
 
     /* Exercice 3 Question 1*/
@@ -135,5 +138,36 @@ public class Main {
             if (aDef.test(etudiant)) System.out.println(etudiant.nom() + " a une moyenne null");
             else System.out.println(etudiant.nom() + " a " + moyenne(etudiant) + " de moyenne");
         }
+    }
+
+    /* Exercice 3 Question 5*/
+    private static final Predicate<Etudiant> naPasLaMoyennev1 = etudiant -> moyenne(etudiant) < 10;
+
+    /* Exercice 3 Question 6*/
+    private static final Predicate<Etudiant> naPasLaMoyennev2 = aDEF.or(naPasLaMoyennev1);
+
+    /* Exercice 3 Question 7*/
+    private static final Predicate<Etudiant> session2v1 = aDEF.or(naPasLaMoyennev1).or(aNoteEliminatoire);
+
+    /* Exercice 3 Question 8*/
+    private static void afficheSiv2(Annee annee, String titre, Predicate<Etudiant> predicate, Function<Etudiant, String> representation) {
+        System.out.println(titre);
+        annee.etudiants().forEach(etudiant -> {
+            if (predicate.test(etudiant)) {
+                String s = representation.apply(etudiant);
+                System.out.println(s);
+            }
+        });
+    }
+
+    /* Exercice 3 Question 9*/
+    public static Double moyenneIndicative(Etudiant etudiant) {
+        Double n = matiereNotesCoef(etudiant);
+        return n / sommeCoef(etudiant);
+    }
+
+    /* Exercice 3 Question 10*/
+    private static Predicate<Etudiant> naPasLaMoyenneGeneralisee(Function<Etudiant, Double> moyenne) {
+        return etudiant -> moyenne.apply(etudiant) < 10;
     }
 }
